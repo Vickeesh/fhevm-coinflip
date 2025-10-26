@@ -1,0 +1,40 @@
+{
+  "name": "coin-flip-dapp",
+  "version": "1.0.0",
+  "description": "A decentralized coin flip game built with Solidity and React",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run hardhat:node\" \"npm run frontend:dev\"",
+    "hardhat:node": "hardhat node",
+    "hardhat:compile": "hardhat compile",
+    "hardhat:deploy": "hardhat run scripts/deploy.js --network localhost",
+    "frontend:dev": "cd frontend && npm run dev",
+    "frontend:build": "cd frontend && npm run build",
+    "frontend:install": "cd frontend && npm install",
+    "install:all": "npm install && npm run frontend:install",
+    "build": "cd frontend && npm run build",
+    "start": "cd frontend && npm run preview"
+  },
+  "keywords": [
+    "web3",
+    "dapp",
+    "solidity",
+    "react",
+    "coin-flip",
+    "gambling"
+  ],
+  "author": "Vickeesh",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@fhevm/hardhat-plugin": "^0.1.0",
+    "concurrently": "^8.2.2",
+    "hardhat": "^2.19.0"
+  },
+  "dependencies": {
+    "@fhevm/solidity": "^0.8.0",
+    "dotenv": "^17.2.3",
+    "ethers": "^6.8.0",
+    "fhevmjs": "^0.5.0"
+  }
+}
