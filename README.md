@@ -14,7 +14,7 @@ A fully decentralized coin flip game built with **FHEVM (Fully Homomorphic Encry
 
 ## 🚀 Live Demo
 
-**Contract Address**: `0x046AE3167Bcc4646155090Fc9b093DD1B3021223`  
+**Contract Address**: `0x4dE4D03388737695425918B2e6E8D4CC29d56CB4`  
 **Network**: Sepolia Testnet (Chain ID: 11155111)  
 **Repository**: [GitHub](https://github.com/Vickeesh/fhevm-coinflip)
 
@@ -99,7 +99,7 @@ cd frontend
 npm run dev
 ```
 
-Visit `http://localhost:3001/` to use the dApp!
+Visit `http://localhost:3000/` to use the dApp!
 
 ## 🚀 Deploy to Vercel
 
@@ -114,7 +114,7 @@ Deploy your own instance in minutes:
 3. Configure environment variables:
    - `VITE_NETWORK=sepolia`
    - `VITE_CHAIN_ID=11155111`
-   - `VITE_CONTRACT_ADDRESS=0x046AE3167Bcc4646155090Fc9b093DD1B3021223`
+   - `VITE_CONTRACT_ADDRESS=0x4dE4D03388737695425918B2e6E8D4CC29d56CB4`
    - `VITE_RPC_URL=https://ethereum-sepolia.publicnode.com`
    - `VITE_FHEVM_GATEWAY_URL=https://gateway.sepolia.zama.ai`
 4. Click "Deploy"

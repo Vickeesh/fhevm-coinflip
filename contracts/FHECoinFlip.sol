@@ -56,9 +56,12 @@ contract FHECoinFlip is SepoliaConfig {
         uint256 gameId = gameCounter++;
         
         // Check if contract has enough balance to pay potential winnings
+        // Contract needs to be able to pay out (msg.value - houseEdge) if player wins
+        // Since address(this).balance already includes msg.value, we subtract it first
         uint256 houseEdgeAmount = (msg.value * houseEdge) / 100;
         uint256 winPayout = (msg.value * 2) - houseEdgeAmount;
-        require(address(this).balance >= winPayout, "Insufficient contract balance for payout");
+        uint256 netPayoutNeeded = msg.value - houseEdgeAmount; // What contract must pay from its reserves
+        require(address(this).balance - msg.value >= netPayoutNeeded, "Insufficient contract balance for payout");
         
         // Generate encrypted random number using FHEVM
         euint8 encryptedRandom = FHE.randEuint8();

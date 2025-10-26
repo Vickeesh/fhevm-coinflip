@@ -17,8 +17,8 @@ async function main() {
   const currentBalance = await contract.getContractBalance();
   console.log("Current contract balance:", hre.ethers.formatEther(currentBalance), "ETH");
   
-  // Fund amount (0.5 ETH)
-  const fundAmount = hre.ethers.parseEther("0.5");
+  // Fund amount (0.1 ETH)
+  const fundAmount = hre.ethers.parseEther("0.1");
   console.log("Funding with:", hre.ethers.formatEther(fundAmount), "ETH");
   
   // Fund the contract

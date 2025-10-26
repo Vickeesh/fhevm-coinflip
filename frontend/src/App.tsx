@@ -79,7 +79,7 @@ export default function CoinFlipDApp() {
         
         // Use environment variables for production, fallback to local file for development
         const contractInfoData: ContractInfo = {
-          address: import.meta.env.VITE_CONTRACT_ADDRESS || '0x046AE3167Bcc4646155090Fc9b093DD1B3021223',
+          address: import.meta.env.VITE_CONTRACT_ADDRESS || '0x4dE4D03388737695425918B2e6E8D4CC29d56CB4',
           network: import.meta.env.VITE_NETWORK || 'sepolia',
           chainId: parseInt(import.meta.env.VITE_CHAIN_ID || '11155111'),
           fhevmEnabled: true
