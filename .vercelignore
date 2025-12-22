@@ -1,0 +1,15 @@
+# Exclude contract deployment files from Vercel build
+fhevm-contracts/
+
+# Development files
+*.log
+.env
+.env.*
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

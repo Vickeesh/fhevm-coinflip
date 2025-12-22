@@ -61,13 +61,8 @@ declare global {
   }
 }
 
-// FHEVM Types
-export interface FhevmInstance {
-  createEncryptedInput(contractAddress: string, userAddress: string): unknown;
-  encrypt_bool(value: boolean): Promise<unknown>;
-  encrypt_uint8(value: number): Promise<unknown>;
-  // Add other FHEVM methods as needed
-}
+// FHEVM Types - Import from fhevmjs instead of defining custom incomplete type
+export type { FhevmInstance } from 'fhevmjs';
 
 // Component Props Types
 export interface LastGameResult {
