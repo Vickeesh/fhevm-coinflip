@@ -4,7 +4,7 @@ async function main() {
   console.log("Funding FHECoinFlip contract...");
   
   // Get the contract address from the contract info
-  const contractInfo = require('../frontend/src/contracts/contract-info.json');
+  const contractInfo = require('../../src/contracts/contract-info.json');
   const contractAddress = contractInfo.address;
   
   console.log("Contract Address:", contractAddress);

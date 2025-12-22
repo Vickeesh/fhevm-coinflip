@@ -14,9 +14,9 @@ A fully decentralized coin flip game built with **FHEVM (Fully Homomorphic Encry
 
 ## 🚀 Live Demo
 
-**Contract Address**: `0x4dE4D03388737695425918B2e6E8D4CC29d56CB4`  
+**Contract Address**: `0x2B5C509634992c78Ea5103a3401d8F26d2486841`  
 **Network**: Sepolia Testnet (Chain ID: 11155111)  
-**Repository**: [GitHub](https://github.com/Vickeesh/fhevm-coinflip)
+**Etherscan**: [View on Sepolia Etherscan](https://sepolia.etherscan.io/address/0x2B5C509634992c78Ea5103a3401d8F26d2486841)
 
 ## 🛠️ Technology Stack
 
@@ -52,50 +52,46 @@ cd fhevm-coinflip
 ### 2. Install Dependencies
 
 ```bash
-# Install root dependencies
-npm install
-
-# Install frontend dependencies
-cd frontend
-npm install
-cd ..
+# Install all dependencies (root + contracts)
+npm run install:all
 ```
 
 ### 3. Environment Setup
 
-Create a `.env` file in the root directory:
+Create a `.env` file in the `fhevm-contracts` directory:
 
 ```env
 # Sepolia Testnet Configuration
 SEPOLIA_RPC_URL=https://ethereum-sepolia.publicnode.com
 SEPOLIA_PRIVATE_KEY=your_private_key_here
-
-# FHEVM Configuration for Sepolia
-FHEVM_GATEWAY_URL=https://gateway.sepolia.zama.ai
-FHEVM_NETWORK_URL=https://ethereum-sepolia.publicnode.com
 ```
 
 ### 4. Deploy Smart Contract
 
 ```bash
 # Compile contracts
-npx hardhat compile
+npm run compile
+
+# Check deployment readiness
+cd fhevm-contracts
+npm run check:sepolia
 
 # Deploy to Sepolia
-npx hardhat run scripts/deploy.js --network sepolia
+npm run deploy:sepolia
 ```
 
 ### 5. Fund the Contract
 
 ```bash
-# Fund contract with 0.5 ETH
-npx hardhat run scripts/fund-contract.js --network sepolia
+# Fund contract with 0.1 ETH
+cd fhevm-contracts
+npm run fund
 ```
 
 ### 6. Start Frontend
 
 ```bash
-cd frontend
+# From root directory
 npm run dev
 ```
 
@@ -114,7 +110,7 @@ Deploy your own instance in minutes:
 3. Configure environment variables:
    - `VITE_NETWORK=sepolia`
    - `VITE_CHAIN_ID=11155111`
-   - `VITE_CONTRACT_ADDRESS=0x4dE4D03388737695425918B2e6E8D4CC29d56CB4`
+   - `VITE_CONTRACT_ADDRESS=0x2B5C509634992c78Ea5103a3401d8F26d2486841`
    - `VITE_RPC_URL=https://ethereum-sepolia.publicnode.com`
    - `VITE_FHEVM_GATEWAY_URL=https://gateway.sepolia.zama.ai`
 4. Click "Deploy"
@@ -172,32 +168,42 @@ The dApp is fully responsive and optimized for:
 ### Project Structure
 
 ```
-fhevm-coinflip/
-├── contracts/           # Smart contracts
-│   └── FHECoinFlip.sol
-├── frontend/           # React + TypeScript frontend
-│   ├── src/
-│   │   ├── components/
-│   │   ├── contracts/
-│   │   ├── types/
-│   │   └── App.tsx
+fhevm-coinflip-game/
+├── fhevm-contracts/     # Smart contracts workspace
+│   ├── contracts/
+│   │   └── FHECoinFlip.sol
+│   ├── deploy/          # Deployment scripts
+│   ├── test/            # Contract tests
+│   ├── hardhat.config.js
 │   └── package.json
-├── scripts/            # Deployment scripts
-│   ├── deploy.js
-│   └── fund-contract.js
-├── test/              # Test files
-└── hardhat.config.js
+├── src/                 # Frontend source
+│   ├── components/
+│   ├── contracts/
+│   ├── types/
+│   ├── utils/
+│   └── App.tsx
+├── index.html
+├── vite.config.ts
+└── package.json
 ```
 
 ### Available Scripts
 
 ```bash
-# Compile contracts
-npx hardhat compile
+# Root commands
+npm run dev              # Start frontend dev server
+npm run build            # Build for production
+npm run compile          # Compile smart contracts
+npm run test             # Run contract tests
+npm run deploy:sepolia   # Deploy to Sepolia
 
-# Run tests
-npx hardhat test
-
+# Contract commands (from fhevm-contracts/)
+cd fhevm-contracts
+npm run check:sepolia    # Check deployment readiness
+npm run deploy:sepolia   # Deploy contract
+npm run fund             # Fund contract
+npm run verify           # Verify deployment
+```
 # Deploy to Sepolia
 npx hardhat run scripts/deploy.js --network sepolia
 

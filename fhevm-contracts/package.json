@@ -1,0 +1,27 @@
+{
+  "name": "fhevm-coinflip-contracts",
+  "version": "1.0.0",
+  "description": "FHEVM CoinFlip Smart Contracts",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy": "hardhat run deploy/01_deploy_coinflip.js",
+    "deploy:sepolia": "hardhat run deploy/01_deploy_coinflip.js --network sepolia",
+    "check:sepolia": "hardhat run deploy/00_check_balance.js --network sepolia",
+    "fund": "hardhat run deploy/02_fund_contract.js --network sepolia",
+    "verify": "hardhat run deploy/03_verify_deployment.js --network sepolia",
+    "clean": "hardhat clean",
+    "node": "hardhat node"
+  },
+  "devDependencies": {
+    "@fhevm/hardhat-plugin": "^0.3.0-1",
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "hardhat": "^2.19.0"
+  },
+  "dependencies": {
+    "@fhevm/solidity": "^0.9.1",
+    "@zama-fhe/relayer-sdk": "^0.3.0-6",
+    "dotenv": "^17.2.3",
+    "ethers": "^6.8.0"
+  }
+}

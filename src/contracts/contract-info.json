@@ -1,0 +1,7 @@
+{
+  "address": "0x2B5C509634992c78Ea5103a3401d8F26d2486841",
+  "network": "sepolia",
+  "chainId": 11155111,
+  "fhevmEnabled": true,
+  "fhevmVersion": "0.9"
+}

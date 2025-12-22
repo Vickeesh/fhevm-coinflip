@@ -1,6 +1,6 @@
 # Dependencies
 node_modules/
-frontend/node_modules/
+fhevm-contracts/node_modules/
 
 # Environment variables
 .env
@@ -8,14 +8,16 @@ frontend/node_modules/
 .env.development.local
 .env.test.local
 .env.production.local
+fhevm-contracts/.env
 
 # Build outputs
 artifacts/
 cache/
 typechain-types/
 dist/
-frontend/dist/
-frontend/build/
+fhevm-contracts/artifacts/
+fhevm-contracts/cache/
+fhevm-contracts/typechain-types/
 
 # IDE
 .vscode/
