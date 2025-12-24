@@ -98,3 +98,8 @@ typechain-types/
 
 # FHEVM temp files
 fhevmTemp/
+
+# Media files
+*.mp4
+*.mov
+*.avi

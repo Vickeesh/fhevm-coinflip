@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Wallet, Coins, Shield, LogOut, Activity, History as HistoryIcon, TrendingUp } from 'lucide-react';
+import { Wallet, Coins, Shield, LogOut } from 'lucide-react';
 import { ethers } from 'ethers';
-import { createInstance } from 'fhevmjs';
 import { publicDecrypt, initializeFhevmInstance } from './utils/fhevmDecryption';
 import CoinFlipABI from './contracts/CoinFlip.json';
 import type {
